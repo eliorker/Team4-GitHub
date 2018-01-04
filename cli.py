@@ -30,10 +30,13 @@ def login(username,password):
         if(data==password):
             print(userold+" Has logged successfully into the system!")
             tokenuser(userold)
+            return True
         else:
             print("Wrong Password\\Username details!")
+            return False
     except Exception:
         print("Wrong Password\\Username details!")
+        return False
 @cli.command('register')
 @click.option('--username')
 @click.option('--password')
@@ -50,6 +53,7 @@ def register(username,password,email,acctype):
         if(data==userold):
             print("Username Already taken")
             tk=0
+            return False
         else:
             tk=1
     except Exception:
@@ -65,12 +69,14 @@ def register(username,password,email,acctype):
             if sp==1:
                 print("Register Successfully!")
                 conn.close()
+                return True
             else:
                 print("Register occur a problem")
         except Exception:
             print("Register occur a problem")
     else:
-        pass
+        return False
+    return False
 @cli.command('filter')
 def filter():
     username=addslashes(tokenread())
@@ -115,9 +121,6 @@ def upload(path):
     else:
         print("CV Uploading occur a problem")
         return False
-def test_upload():
-    tokenuser("test")
-    assert upload("cv.json")==True
 def addslashes(name):
     return ("\'"+name+"\'")
 def tokenuser(user):
@@ -141,3 +144,5 @@ def tokenread():
     return username
 if __name__ == '__main__':
     cli()
+
+
