@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2017 at 02:02 PM
+-- Generation Time: Jan 04, 2018 at 01:51 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -48,7 +48,8 @@ INSERT INTO `cvinfo` (`ID`, `username`, `datecol`, `personals`, `academich`, `sk
 (3, 'check', '0000-00-00', 'Personal Summary of cv applicative', 'Your education information', 'Web Development', 'Carrer history ..', 'Reference...', ''),
 (4, 'check', '1994', 'Personal Summary of cv applicative', 'Your education information', 'Web Development', 'Carrer history ..', 'Reference...', ''),
 (5, 'check', '2017-12-11', 'Personal Summary of cv applicative', 'Your education information', 'Web Development', 'Carrer history ..', 'Reference...', ''),
-(6, 'check', '2017-12-11', 'Personal Summary of cv applicative', 'Your education information', 'Web Development', 'Carrer history ..', 'Reference...', 'david.jpeg');
+(6, 'check', '2017-12-11', 'Personal Summary of cv applicative', 'Your education information', 'Web Development', 'Carrer history ..', 'Reference...', 'david.jpeg'),
+(7, 'check', '2017-12-11', 'Personal Summary of cv applicative', 'Your education information', 'Web Development', 'Carrer history ..', 'Reference...', 'david.jpeg');
 
 -- --------------------------------------------------------
 
@@ -60,16 +61,16 @@ CREATE TABLE `users` (
   `ID` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `passwordval` varchar(255) DEFAULT NULL,
-  `typeid` int(11) DEFAULT NULL
+  `typeid` int(11) DEFAULT NULL,
+  `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`ID`, `username`, `passwordval`, `typeid`) VALUES
-(1, 'check', '1234', 0),
-(2, 'check', '1234', 0);
+INSERT INTO `users` (`ID`, `username`, `passwordval`, `typeid`, `email`) VALUES
+(8, 'elior', '7712', 0, 'sagi232123@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -95,12 +96,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cvinfo`
 --
 ALTER TABLE `cvinfo`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
