@@ -109,8 +109,9 @@ def upload(path):
     carrhist=addslashes(json_data['history']['desc'])
     ref=addslashes(json_data['references']['reference'])
     image=addslashes(json_data['basics']['image'])
+    social=addslashes(json_data['social']['links'])
     img =json_data['basics']['image']
-    s="""INSERT INTO `cvinfo` (`ID`, `username`, `datecol`, `personals`, `academich`, `skills`, `carrerhistory`, `refe` , `image`) VALUES (NULL,%s,%s,%s,%s,%s,%s,%s,%s) """%(username,currdate,personal,edu,skills,carrhist,ref,image)
+    s="""INSERT INTO `cvinfo` (`ID`, `username`, `datecol`, `personals`, `academich`, `skills`, `carrerhistory`, `refe` , `image`,`socialinks`) VALUES (NULL,%s,%s,%s,%s,%s,%s,%s,%s,%s) """%(username,currdate,personal,edu,skills,carrhist,ref,image,social)
     sp=mycr.execute(s)
     conn.commit()
     cloudinary.uploader.upload(img,public_id=img)

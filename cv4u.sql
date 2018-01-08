@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2018 at 01:51 PM
+-- Generation Time: Jan 08, 2018 at 11:41 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -35,21 +35,22 @@ CREATE TABLE `cvinfo` (
   `skills` varchar(255) DEFAULT NULL,
   `carrerhistory` varchar(255) DEFAULT NULL,
   `refe` varchar(255) DEFAULT NULL,
-  `image` varchar(255) NOT NULL
+  `image` varchar(255) NOT NULL,
+  `socialinks` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `cvinfo`
 --
 
-INSERT INTO `cvinfo` (`ID`, `username`, `datecol`, `personals`, `academich`, `skills`, `carrerhistory`, `refe`, `image`) VALUES
-(1, 'sagi', '2017-12-11', 'Lorem ipsum', 'Lorem ipsum', 'Lorem ipsum', 'Lorem ipsum', 'Lorem ipsum', ''),
-(2, 'sagi', '0000-00-00', 'Personal Summary of cv applicative', 'Your education information', 'Web Development', 'Carrer history ..', 'Reference...', ''),
-(3, 'check', '0000-00-00', 'Personal Summary of cv applicative', 'Your education information', 'Web Development', 'Carrer history ..', 'Reference...', ''),
-(4, 'check', '1994', 'Personal Summary of cv applicative', 'Your education information', 'Web Development', 'Carrer history ..', 'Reference...', ''),
-(5, 'check', '2017-12-11', 'Personal Summary of cv applicative', 'Your education information', 'Web Development', 'Carrer history ..', 'Reference...', ''),
-(6, 'check', '2017-12-11', 'Personal Summary of cv applicative', 'Your education information', 'Web Development', 'Carrer history ..', 'Reference...', 'david.jpeg'),
-(7, 'check', '2017-12-11', 'Personal Summary of cv applicative', 'Your education information', 'Web Development', 'Carrer history ..', 'Reference...', 'david.jpeg');
+INSERT INTO `cvinfo` (`ID`, `username`, `datecol`, `personals`, `academich`, `skills`, `carrerhistory`, `refe`, `image`, `socialinks`) VALUES
+(1, 'sagi', '2017-12-11', 'Lorem ipsum', 'Lorem ipsum', 'Lorem ipsum', 'Lorem ipsum', 'Lorem ipsum', '', ''),
+(2, 'sagi', '0000-00-00', 'Personal Summary of cv applicative', 'Your education information', 'Web Development', 'Carrer history ..', 'Reference...', '', ''),
+(3, 'check', '0000-00-00', 'Personal Summary of cv applicative', 'Your education information', 'Web Development', 'Carrer history ..', 'Reference...', '', ''),
+(4, 'check', '1994', 'Personal Summary of cv applicative', 'Your education information', 'Web Development', 'Carrer history ..', 'Reference...', '', ''),
+(5, 'check', '2017-12-11', 'Personal Summary of cv applicative', 'Your education information', 'Web Development', 'Carrer history ..', 'Reference...', '', ''),
+(6, 'check', '2017-12-11', 'Personal Summary of cv applicative', 'Your education information', 'Web Development', 'Carrer history ..', 'Reference...', 'david.jpeg', ''),
+(7, 'check', '2017-12-11', 'Personal Summary of cv applicative', 'Your education information', 'Web Development', 'Carrer history ..', 'Reference...', 'david.jpeg', '');
 
 -- --------------------------------------------------------
 
@@ -70,7 +71,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`ID`, `username`, `passwordval`, `typeid`, `email`) VALUES
-(8, 'elior', '7712', 0, 'sagi232123@gmail.com');
+(8, 'elior', '7712', 0, 'sagi232123@gmail.com'),
+(9, 'david', '1234', 1, 'feew@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -101,7 +103,7 @@ ALTER TABLE `cvinfo`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

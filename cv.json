@@ -1,0 +1,24 @@
+{
+  "basics": {
+
+    "summary": "Personal Summary of cv applicative",
+	"image":"david.jpeg"	
+	
+  },
+  "education": {
+    "edu": "Your education information"
+  },
+  "skills": {
+    "desc": "Web Development"
+  },
+  "history": {
+    "desc": "Carrer history .."
+  },
+  "social": {
+    "links": "link1,link2,link3,link4"
+  },
+  "references": {
+    "reference": "Reference..."
+  }
+
+}
