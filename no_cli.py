@@ -33,11 +33,7 @@ def login(username,password):
         print("Wrong Password\\Username details!")
         return True
 
-def register(username,password,email,acctype):
-    conn = pymysql.connect(host="localhost", user="root", passwd="", db="cv4u")
-    mycr = conn.cursor()
-    cloudinary.config(cloud_name="dy9so7yhs", api_key="543617755226786", api_secret="pawptsoBASgr1jWvD0lhZAvOZhU",
-                      CLOUDINARY_URL="cloudinary://543617755226786:pawptsoBASgr1jWvD0lhZAvOZhU@dy9so7yhs")
+def register(username,password,email,acctype,telephone):
     userold=username
     username = addslashes(username)
     try:
@@ -48,7 +44,7 @@ def register(username,password,email,acctype):
         if(data==userold):
             print("Username Already taken")
             tk=0
-            return True
+            return False
         else:
             tk=1
     except Exception:
@@ -57,8 +53,9 @@ def register(username,password,email,acctype):
         acctype=int(acctype)
         password=addslashes(password)
         email=addslashes(email)
+        telephone=addslashes(telephone)
         try:
-            s="""INSERT INTO users(`ID`, `username`, `passwordval`, `typeid`,`email`) VALUES (NULL ,%s,%s,%s,%s)"""%(username,password,acctype,email)
+            s="""INSERT INTO users(`ID`, `username`, `passwordval`, `typeid`,`email`,`telephone`) VALUES (NULL ,%s,%s,%s,%s,%s)"""%(username,password,acctype,email,telephone)
             sp=mycr.execute(s)
             conn.commit()
             if sp==1:
@@ -69,11 +66,9 @@ def register(username,password,email,acctype):
                 print("Register occur a problem")
         except Exception:
             print("Register occur a problem")
-            return False
     else:
-        return True
-    return True
-
+        return False
+    return False
 def filter():
     conn = pymysql.connect(host="localhost", user="root", passwd="", db="cv4u")
     mycr = conn.cursor()

@@ -42,7 +42,8 @@ def login(username,password):
 @click.option('--password')
 @click.option('--email')
 @click.option('--acctype')
-def register(username,password,email,acctype):
+@click.option('--telephone')
+def register(username,password,email,acctype,telephone):
     userold=username
     username = addslashes(username)
     try:
@@ -62,8 +63,9 @@ def register(username,password,email,acctype):
         acctype=int(acctype)
         password=addslashes(password)
         email=addslashes(email)
+        telephone=addslashes(telephone)
         try:
-            s="""INSERT INTO users(`ID`, `username`, `passwordval`, `typeid`,`email`) VALUES (NULL ,%s,%s,%s,%s)"""%(username,password,acctype,email)
+            s="""INSERT INTO users(`ID`, `username`, `passwordval`, `typeid`,`email`,`telephone`) VALUES (NULL ,%s,%s,%s,%s,%s)"""%(username,password,acctype,email,telephone)
             sp=mycr.execute(s)
             conn.commit()
             if sp==1:

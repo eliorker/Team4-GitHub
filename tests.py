@@ -4,7 +4,7 @@ import no_cli
 
 class TestCV(unittest.TestCase):
     def test_register(self):
-        self.assertEqual(no_cli.register("elio321","123","mail","0"),True )
+        self.assertEqual(no_cli.register("elio321","123","mail","0","0509099545"),True )
     def test_login(self):
         self.assertEqual(no_cli.login("elio321", "123"), True)
     def test_addslashes(self):

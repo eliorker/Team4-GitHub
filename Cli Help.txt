@@ -1,4 +1,3 @@
-# Team4-GitHub
 Welcome to CV4U CLI
 Options Are available:
 Login:
@@ -8,8 +7,7 @@ python cli.py register --username youruser --password yourpass --email email --a
 Add:
 python cli.py add --path yourcvfile.json 
 Filter:
-python cli.py filter // filtering all candidate if acctype is 1 !
+python cli.py filter // filtering all candidate
 
 Mysql : 
 cv4u.sql 
-Need to restore in a mysql xammp server or wamp server
