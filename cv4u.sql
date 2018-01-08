@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2018 at 01:51 PM
+-- Generation Time: Jan 08, 2018 at 12:12 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -49,7 +49,11 @@ INSERT INTO `cvinfo` (`ID`, `username`, `datecol`, `personals`, `academich`, `sk
 (4, 'check', '1994', 'Personal Summary of cv applicative', 'Your education information', 'Web Development', 'Carrer history ..', 'Reference...', ''),
 (5, 'check', '2017-12-11', 'Personal Summary of cv applicative', 'Your education information', 'Web Development', 'Carrer history ..', 'Reference...', ''),
 (6, 'check', '2017-12-11', 'Personal Summary of cv applicative', 'Your education information', 'Web Development', 'Carrer history ..', 'Reference...', 'david.jpeg'),
-(7, 'check', '2017-12-11', 'Personal Summary of cv applicative', 'Your education information', 'Web Development', 'Carrer history ..', 'Reference...', 'david.jpeg');
+(7, 'check', '2017-12-11', 'Personal Summary of cv applicative', 'Your education information', 'Web Development', 'Carrer history ..', 'Reference...', 'david.jpeg'),
+(8, 'elior', '2018-1-8', 'Personal Summary of cv applicative', 'Your education information', 'Web Development', 'Carrer history ..', 'Reference...', 'david.jpeg'),
+(9, 'elior', '2018-1-8', 'Personal Summary of cv applicative', 'Your education information', 'Web Development', 'Carrer history ..', 'Reference...', 'david.jpeg'),
+(10, 'elior', '2018-1-8', 'Personal Summary of cv applicative', 'Your education information', 'Web Development', 'Carrer history ..', 'Reference...', 'david.jpeg'),
+(11, 'david', '2018-1-8', 'Personal Summary of cv applicative', 'Your education information', 'Web Development', 'Carrer history ..', 'Reference...', 'david.jpeg');
 
 -- --------------------------------------------------------
 
@@ -62,15 +66,17 @@ CREATE TABLE `users` (
   `username` varchar(255) NOT NULL,
   `passwordval` varchar(255) DEFAULT NULL,
   `typeid` int(11) DEFAULT NULL,
-  `email` varchar(255) NOT NULL
+  `email` varchar(255) NOT NULL,
+  `day` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`ID`, `username`, `passwordval`, `typeid`, `email`) VALUES
-(8, 'elior', '7712', 0, 'sagi232123@gmail.com');
+INSERT INTO `users` (`ID`, `username`, `passwordval`, `typeid`, `email`, `day`) VALUES
+(8, 'elior', '7712', 0, 'sagi232123@gmail.com', ''),
+(9, 'david', '1234', 1, 'feew@gmail.com', '');
 
 --
 -- Indexes for dumped tables
@@ -96,12 +102,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cvinfo`
 --
 ALTER TABLE `cvinfo`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

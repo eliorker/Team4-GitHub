@@ -6,6 +6,7 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 import pytest
+import datetime
 #Config
 try:
     conn=pymysql.connect(host="localhost",user="root",passwd="",db="cv4u")
@@ -42,7 +43,8 @@ def login(username,password):
 @click.option('--password')
 @click.option('--email')
 @click.option('--acctype')
-def register(username,password,email,acctype):
+def register(username,password,email,acctype,datetime):
+    today = datetime.date.today()
     userold=username
     username = addslashes(username)
     try:
@@ -62,8 +64,9 @@ def register(username,password,email,acctype):
         acctype=int(acctype)
         password=addslashes(password)
         email=addslashes(email)
+        dayy = addslashes(str(today.ctime()))
         try:
-            s="""INSERT INTO users(`ID`, `username`, `passwordval`, `typeid`,`email`) VALUES (NULL ,%s,%s,%s,%s)"""%(username,password,acctype,email)
+            s="""INSERT INTO users(`ID`, `username`, `passwordval`, `typeid`,`email`, `day`) VALUES (NULL ,%s,%s,%s,%s,%s)"""%(username,password,acctype,email,dayy)
             sp=mycr.execute(s)
             conn.commit()
             if sp==1:
@@ -98,8 +101,7 @@ def filter():
 @click.option('--path')
 def upload(path):
     username=addslashes(tokenread())#Username
-    nowdate=datetime.datetime.now()
-    currdate=addslashes(str(nowdate.year)+"-"+str(nowdate.month)+"-"+str(nowdate.day))
+    today = datetime.date.today()
     with open(path) as fd:
         json_data = json.load(fd)
     #In the future add the opprituntiy to read in loop and add columns to the sql
@@ -110,7 +112,8 @@ def upload(path):
     ref=addslashes(json_data['references']['reference'])
     image=addslashes(json_data['basics']['image'])
     img =json_data['basics']['image']
-    s="""INSERT INTO `cvinfo` (`ID`, `username`, `datecol`, `personals`, `academich`, `skills`, `carrerhistory`, `refe` , `image`) VALUES (NULL,%s,%s,%s,%s,%s,%s,%s,%s) """%(username,currdate,personal,edu,skills,carrhist,ref,image)
+    dayy = addslashes(str(today.ctime()))
+    s="""INSERT INTO `cvinfo` (`ID`, `username`, `datecol`, `personals`, `academich`, `skills`, `carrerhistory`, `refe` , `image`) VALUES (NULL,%s,%s,%s,%s,%s,%s,%s,%s) """%(username,dayy,personal,edu,skills,carrhist,ref,image)
     sp=mycr.execute(s)
     conn.commit()
     cloudinary.uploader.upload(img,public_id=img)
