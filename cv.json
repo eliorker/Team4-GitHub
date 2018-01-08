@@ -1,0 +1,22 @@
+{
+  "basics": {
+
+    "summary": "Personal Summary of cv applicative",
+	"image":"david.jpeg"	
+	
+  },
+  "education": {
+    "edu": "Your education information",
+    "edubackgroud": "Options:1.Software ,2.Structual,3.Industrial,4.Chemical"
+  },
+  "skills": {
+    "desc": "Web Development"
+  },
+  "history": {
+    "desc": "Carrer history .."
+  },
+  "references": {
+    "reference": "Reference..."
+  }
+
+}
